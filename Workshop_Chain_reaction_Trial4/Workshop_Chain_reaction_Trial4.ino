@@ -117,7 +117,7 @@ void loop() {
     }
 
     Data_from_NC = analogRead(pin_receive_signal); //Read signal coming from neighboring NC. The value will either be 0-50 (some background noise) or 1023. 
-    if(pin_receive_signal > 1000)
+    if(Data_from_NC > 1000)
     {
       active_behaviors[Signal_NC] = true; //Set behavior identifier as true
       frame_count[Signal_NC] = 0; //Reset frame count

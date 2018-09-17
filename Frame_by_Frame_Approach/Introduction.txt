@@ -1,0 +1,10 @@
+So far, the actuation was done using the delay function. 
+Use of the delay function is not ideal for our application. 
+When the teensy is executing the delay function, it isn't capable of doing anything else. Thus, if we receive IR triggers or a message from a neighboring teensy, it won't be able to detect it.
+As shown in https://github.com/Parichit02/B.-Arch.---Fall-2018/tree/master/Workshop_Chain_reaction_with_Delay
+The Teensy is capable of receiving triggers and messages from other teensies simultaneuously as well.
+
+Thus, we switch over to a frame-by-frame approach. Here, the actuation value is determined at each frame. The actuators are then set at the actuation level at each frame.
+In the code here, each frame is 1 ms. Every frame, the actuator is set at its new actuation PWM level. 
+
+Video exhibit attached here shows the final result of the work.

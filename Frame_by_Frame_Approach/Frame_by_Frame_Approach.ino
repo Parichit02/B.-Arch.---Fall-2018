@@ -9,13 +9,18 @@ int LED = 13; //Pin declaration
 float current_millis; //Reset every frame
 float elapsed_millis; //Time since last reset of current_millis
 float frame_duration = 1; //Time between frames
-int PWM_value=0; //PWM value
+int frame_count=0;
+float active_time = 3000;
+float increment = 255.00/active_time; 
+float PWM_value; //PWM value
 
 void setup() {
   // put your setup code here, to run once:
   pinMode(LED, OUTPUT); //Pin Declaration
   current_millis = millis(); //Set current time for first iteration
-
+  PWM_value=0;
+  SoftPWMBegin(SOFTPWM_NORMAL);
+  Serial.begin(9600);
 }
 
 void loop() {
@@ -23,12 +28,21 @@ void loop() {
   elapsed_millis = millis()-current_millis; //Time since last reset
   if(elapsed_millis > frame_duration || elapsed_millis < 0) // Elapsed time greater than frame duration
   {
-    PWM_value = PWM_value + 10; //Increase PWM value
-    if(PWM_value > 250)
+    current_millis = millis();
+    Serial.println(frame_count);
+    frame_count++;
+    if(frame_count < active_time)
     {
-      PWM_value = 0; //Reset PWM value
+      PWM_value = PWM_value + increment; //Increase PWM value
+      SoftPWMSet(LED, PWM_value); //Set PWM value
     }
-
-    SoftPWMSet(LED, PWM_value); //Set PWM value
+    if(frame_count>active_time)
+      {
+        SoftPWMSet(LED, 0);
+      }
+    if(frame_count > 5000)
+    {
+      frame_count=0;
+    }
   }
 }

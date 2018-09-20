@@ -39,6 +39,7 @@ void loop() {
     if(frame_count>active_time)
       {
         SoftPWMSet(LED, 0);
+        PWM_value = 0;
       }
     if(frame_count > 5000)
     {

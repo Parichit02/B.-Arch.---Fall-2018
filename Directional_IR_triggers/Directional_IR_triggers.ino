@@ -56,7 +56,7 @@ void loop() {
     if(timing1>timing2)
     {
       if(timing2>0){
-        //Going Left to right
+        //Going right to left
         digitalWrite(3,HIGH);
       }
     }
@@ -65,7 +65,7 @@ void loop() {
     {
       if(timing1>0)
       {
-        //Going Right to Left
+        //Going left to right
         digitalWrite(17,HIGH);
       }
     }

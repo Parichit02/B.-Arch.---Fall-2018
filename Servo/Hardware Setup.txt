@@ -1,0 +1,12 @@
+Without using actuator interface boards, there is a small degree of hacking involved in the setup.
+The following steps would enable the setup for the servo:
+
+1. Strip one end of the 6P cable (other end connected to a 6P jack). White cable transmits power, black is data (output from the HCDM) and blue is ground (See image). Cut the other wires. 
+2. Connect the wires to the servo input. For the servo - Orange is data , Red is power and brown is ground
+3. Upload Servo.ino. (There is a built in library for the servo)
+4. Watch in amazement! 
+
+The tricky part here is to ensure that the intermediate connection made (shown in setup.png) is correct. Under no circumstance should the power and ground be connected.
+Use tape/heat shrink to separate out the two components. 
+
+Video exhibit of intended provided as well. Feel free to play around and try new stuff with it.

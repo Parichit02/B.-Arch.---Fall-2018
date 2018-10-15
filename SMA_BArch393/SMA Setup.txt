@@ -1,0 +1,13 @@
+Having spoken to a few of you about your projects, I realized that several projects can really potentially benefit through the use of shape memory alloys (SMA). These are basically metallic alloys that contract (their length reduces) when they are subjected to heat.
+When current is passed through SMA strings, it generated heat and leads to it's contraction.
+
+I've put up a video to demonstrate how it works. 
+
+I've added code for it on GitHub as well. (Check repo).
+
+A couple of points about the SMAs:
+1. Since they're actuated by heat, they have a cool down associated with them. To be safe, I would recommend a 20 second cool down period. 
+2. After initial testing, I've found that a 10 inch SMA (25.4 cm) contracts to about 23.8 cm. It's safe to assume that there is a contraction of about 1.5 - 2 cm. 
+3. As shown in the video, it uses a 4P interface jack plate to interface with the NC + HCDM system. The SMAs and the Jackplates are abundantly available. Feel free to use these. 
+
+I hope this helps some of you. Feel free to reach out if you have any questions.  
